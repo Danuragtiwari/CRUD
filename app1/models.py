@@ -8,3 +8,4 @@ class Student(models.Model):
     standard=models.CharField(max_length=2)
     class Meta:
         db_table="student"
+        # fields = '__all__'
