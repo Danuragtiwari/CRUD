@@ -23,7 +23,8 @@
             </tr>  
             </thead>  
             <tbody>  
-        {% for std in student %}  
+                {% comment %} {{students}} {% endcomment %}
+        {% for std in students %}  
             <tr>  
                 <td>{{std.name }}</td>  
                 <td>{{ std.rollno }}</td>  
