@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect 
+from django.urls import reverse
 from django.http import HttpResponse
 from .forms import StudentForm
 from .models import Student
@@ -28,7 +29,7 @@ def update(request,id):
     form=StudentForm(request.POST,instance=students)
     if form.is_valid():
         form.save()
-        return redirect('home/')
+        return redirect('home')
     return render(request,'hometoedit.html',{'student':students})
 def edit(request,id):
     students=Student.objects.get(id=id)
@@ -36,4 +37,4 @@ def edit(request,id):
 def delete(request,id):
     students=Student.objects.get(id=id)
     students.delete()
-    return redirect('home/')
+    return redirect('home')
