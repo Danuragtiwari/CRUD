@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jagm2pok#n-cr!1%2dlz1x5^$p_5s*@%ap2s90qnklr2v97kq-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',] 
 
 
 # Application definition
@@ -133,4 +133,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'HOST':'localhost',  
 #         'PORT':'3306'  
 #     }  
-# }  
+#}
