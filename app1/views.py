@@ -22,16 +22,16 @@ def index(request):
 def home(request):
     students=Student.objects.all()
     return render(request,'hometoshow.html',{'students':students})
-    # return render(request,'add.html')
+   
 def update(request,id):
-    students=StudentForm.objects.get(id=id)
+    students=Student.objects.get(id=id)
     form=StudentForm(request.POST,instance=students)
     if form.is_valid():
         form.save()
         return redirect('home/')
     return render(request,'hometoedit.html',{'student':students})
 def edit(request,id):
-    students=StudentForm.objects.get(id=id)
+    students=Student.objects.get(id=id)
     return render(request,'hometoedit.html',{'student':students})
 def delete(request,id):
     students=Student.objects.get(id=id)
